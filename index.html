@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SARAPAN NIKMAT PAGI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #ddd;
+  line-height: 1.8;
+  background: linear-gradient(135deg, #0a0a0a, #2b2b2b, #1a0033, #000814);
+}
+/* ===== STYLE Warna ===== */
+
+h1, h2, h3 {
+  color: #fff;
+  text-shadow: 
+    0 0 5px #a020f0,
+    0 0 15px #a020f0,
+    0 0 30px #6a0dad;
+}
+
+.w3-button {
+  background: linear-gradient(45deg, #6a0dad, #a020f0);
+  color: white;
+  border: none;
+  box-shadow: 0 0 10px #a020f0;
+  transition: 0.3s;
+}
+
+.w3-button:hover {
+  box-shadow: 0 0 20px #a020f0, 0 0 40px #6a0dad;
+  transform: scale(1.05);
+}
+
+.w3-content {
+  background-color: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(160,32,240,0.3);
+  padding: 20px;
+}
+
+footer {
+  background: linear-gradient(90deg, #000000, #1a0033);
+  box-shadow: 0 0 20px #a020f0;
+}
+
+/* Sosmed glow */
+.sosmed i, .sosmed img {
+  transition: 0.3s;
+}
+
+.sosmed i:hover, .sosmed img:hover {
+  box-shadow: 
+    0 0 10px #a020f0,
+    0 0 20px #6a0dad,
+    0 0 30px #00f0ff;
+  transform: scale(1.2);
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('/w3images/parallax1.jpg');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/w3images/parallax2.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/w3images/parallax3.jpg");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+.sosmed {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* ini kunci biar rata tengah */
+  gap: 15px;
+}
+.sosmed a {
+  text-decoration: none;
+}
+.sosmed i {
+  font-size: 30px;
+}
+.sosmed img {
+  width: 30px;
+  height: 30px;
+  display: block; /* penting biar ga naik */
+}
+/* ===== GAMBAR MENU ===== */
+.w3-row-padding img {
+  width: 100%;
+  height: 250px;      /* SAMAKAN TINGGI */
+  object-fit: cover;  /* biar tidak gepeng */
+  border-radius: 10px;
+}
+/* ===== icon ===== */
+.icon {
+  margin-right: 10px;
+  font-size: 18px;
+  vertical-align: middle;
+  color: #a020f0;
+  text-shadow: 0 0 10px #a020f0;
+}
+/* ===== task pembuka ===== */
+.tengah {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.8;
+  color: #ddd;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> TENTANG</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> MENU</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> KONTAK</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">TENTANG</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">MENU</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">KONTAK</a>
+    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">SARAPAN <span class="w3-hide-small">NIKMAT </span>PAGI</span>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">TENTANG KAMI</h3>
+  <p class="w3-center"><em>Awali harimu dengan sarapan lezat!</em></p>
+  <p class="tengah">
+Kami adalah penyedia sarapan pagi yang menghadirkan hidangan hangat, lezat, dan siap menemani aktivitasmu sejak pagi hari. Dengan bahan segar dan racikan bumbu khas, setiap menu kami dibuat untuk memberikan energi dan semangat di setiap gigitan.
+</p>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>SARAPAN NIKMAT PAGI</b></p><br>
+      <img src="avatar_profil.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="300" height="333">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large w3-center">
+      <p>“Setiap pagi adalah awal baru, dan semuanya dimulai dari apa yang kamu nikmati. Kami menghadirkan beragam pilihan sarapan hangat dengan cita rasa yang akrab namun tetap istimewa. Dari hidangan sederhana hingga favorit sepanjang masa, semuanya dimasak fresh setiap hari dengan bahan pilihan. Bukan hanya untuk mengenyangkan, tapi juga memberi kenyamanan, energi, dan semangat untuk menjalani hari dengan lebih baik. Karena sarapan yang baik, selalu jadi awal yang tepat.”</p>
+    </div>
+  </div>
+ 
+  <p class="w3-large w3-center w3-padding-16">Keunggulan Kami:</p>
+<p class="w3-wide">
+  <i class="fa fa-camera icon"></i> Bersih & Higienis
+</p>
+<div class="w3-light-grey">
+  <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:100%">100%</div>
+</div>
+
+<p class="w3-wide">
+  <i class="fa fa-laptop icon"></i> Rasa Lezat & Autentik
+</p>
+<div class="w3-light-grey">
+  <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:95%">95%</div>
+</div>
+
+<p class="w3-wide">
+  <i class="fa fa-photo icon"></i> Pelayanan Cepat
+</p>
+<div class="w3-light-grey">
+  <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
+</div>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-32" style="margin-top:50px;">
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">3+</span><br>
+    Mitra
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">5+</span><br>
+   Menu Favorit
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">100+</span><br>
+    Pelanggan Puas
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">150+</span><br>
+    Pesanan Harian
+  </div>
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">MENU SARAPAN</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+  <h3 class="w3-center">MENU FAVORIT PAGI INI</h3>
+  <p class="w3-center"><em>Pilihan menu sarapan terbaik yang siap menghangatkan pagimu.<br> Klik gambar untuk melihat lebih jelas</em></p><br>
+
+  <!-- Responsive Grid -->
+<div class="w3-row-padding w3-center">
+  <div class="w3-col m3">
+    <img src="gambar/gado_gado.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Gado Gado">
+  </div>
+
+  <div class="w3-col m3">
+    <img src="gambar/ketupat_sayur.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Ketupat Sayur">
+  </div>
+
+  <div class="w3-col m3">
+    <img src="gambar/lontong_sayur.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Lontong Sayur">
+  </div>
+
+  <div class="w3-col m3">
+    <img src="gambar/mie_goreng.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Mie Goreng">
+  </div>
+</div>
+
+<div class="w3-row-padding w3-center w3-section">
+  <div class="w3-col m3">
+   <img src="gambar/nasi _uduk.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Nasi Uduk">
+  </div>
+
+  <div class="w3-col m3">
+    <img src="gambar/nasi_goreng_spesial.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Nasi Goreng Spesial">
+  </div>
+
+  <div class="w3-col m3">
+    <img src="gambar/nasi_kuning.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Nasi Kuning">
+  </div>
+
+  <div class="w3-col m3">
+    <img src="gambar/soto_ayam.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soto Ayam">
+  </div>
+
+  <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">
+    LIHAT MENU LAINNYA
+  </button>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">KONTAK</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <h3 class="w3-center">LOKASI & PESAN SEKARANG</h3>
+  <p class="w3-center"><em>Sarapan enak siap menemani pagimu!</em></p>
+<div class="w3-col m4 w3-container">
+  <iframe 
+    src="https://www.google.com/maps?q=0.5276200,101.4449470&output=embed"
+    class="w3-image w3-round"
+    style="width:100%; height:300px; border:0;">
+  </iframe>
+
+  <a href="https://www.google.com/maps?q=0.5276200,101.4449470" 
+     target="_blank" 
+     class="w3-button w3-small w3-margin-top">
+     Buka di Google Maps
+  </a>
+</div>
+    <div class="w3-col m8 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> RIAU, PEKANBARU JL. AGUS SALIM <br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: 089519287583<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: m.revaelartha@mail.com<br>
+      </div>
+      <p>Hubungi kami <i class="fa fa-coffee"></i>, untuk pemesanan:</p>
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+        <button class="w3-button w3-black w3-right w3-section" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+<div class="w3-xlarge w3-section sosmed">
+  <a href="https://github.com/BlackYutta" target="_blank">
+    <i class="fa fa-github w3-hover-opacity"></i>
+  </a>
+  <a href="https://www.instagram.com/xvael_" target="_blank">
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+  </a>
+  <a href="https://www.tiktok.com/@nnayutta?_r=1&_t=ZS-95cEGI90PtF" target="_blank">
+    <img src="tiktok.png" class="w3-hover-opacity">
+  </a>
+  <a href="https://www.threads.com/@xvael_" target="_blank">
+    <i class="fa fa-comments w3-hover-opacity"></i>
+  </a>
+</div>
+  <p>sarapan pagi <a href="https://www.instagram.com/xvael_" title="W3.CSS" target="_blank" class="w3-hover-text-green">nikmat</a></p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
